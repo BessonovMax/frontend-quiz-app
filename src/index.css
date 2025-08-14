@@ -1,1 +1,56 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-html-background: var(--html-background);
+  --color-accessibility-background: var(--accessibility-background);
+  --color-css-background: var(--css-background);
+  --color-correct: var(--correct);
+  --color-incorrect: var(--incorrect);
+  --color-js-background: var(--js-background);
+  --color-primary: var(--primary);
+  --color-background: var(--background);
+  --color-variant-background: var(--variant-background);
+  --color-variant-foreground: var(--variant-foreground);
+  --color-text: var(--text);
+  --color-circle: var(--circle);
+  --color-variant-foreground-text: var(--variant-foreground-text);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #f4f6fa;
+  --variant-background: #fff;
+  --text: #313e51;
+  --variant-foreground: #f4f6fa;
+  --circle: #edf1f9;
+  --primary: #a729f5;
+  --correct: #2fd887;
+  --incorrect: #ee5454;
+  --html-background: #fff5ed;
+  --css-background: #e0fdef;
+  --js-background: #ebf0ff;
+  --accessibility-background: #f6e7ff;
+  --variant-foreground-text: #626c7f;
+}
+
+.dark {
+  --background: #313e51;
+  --variant-background: #3b4d66;
+  --text: #fff;
+  --variant-foreground: #f4f6fa;
+  --variant-foreground-text: #626c7f;
+  --circle: #2d3949;
+  --primary: #a729f5;
+  --correct: #2fd887;
+  --incorrect: #ee5454;
+  --html-background: #fff5ed;
+  --css-background: #e0fdef;
+  --js-background: #ebf0ff;
+  --accessibility-background: #f6e7ff;
+}
