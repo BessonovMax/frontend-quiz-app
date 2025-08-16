@@ -40,6 +40,7 @@
   --color-variant-foreground: var(--variant-foreground);
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
+  --color-text-letter: var(--text-letter);
   --color-circle: var(--circle);
   --color-variant-foreground-text: var(--variant-foreground-text);
 }
@@ -50,6 +51,7 @@
   --variant-background: #fff;
   --text-primary: #313e51;
   --text-secondary: #626c7f;
+  --text-letter: #626c7f;
   --variant-foreground: #f4f6fa;
   --circle: #edf1f9;
   --primary: #a729f5;
@@ -66,7 +68,8 @@
   --background: #313e51;
   --variant-background: #3b4d66;
   --text-primary: #fff;
-  --text-secondary: #626c7f;
+  --text-secondary: #abc1e1;
+  --text-letter: #626c7f;
   --variant-foreground: #f4f6fa;
   --variant-foreground-text: #626c7f;
   --circle: #2d3949;

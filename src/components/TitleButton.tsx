@@ -10,7 +10,7 @@ const iconMap: Record<string, { bg: string }> = {
   Accessibility: { bg: "bg-accessibility-background" },
 };
 
-const titleButton = ({ title, iconPath }: Props) => {
+const TitleButton = ({ title, iconPath }: Props) => {
   const { bg } = iconMap[title];
   return (
     <button className="bg-variant-background border-variant-background flex min-w-[20.4375rem] items-center justify-start gap-4 rounded-[12px] border-3 p-[13px] hover:cursor-pointer md:min-w-[40rem] md:gap-8 md:rounded-[24px] xl:min-w-[35.25rem] xl:p-[21px]">
@@ -28,4 +28,4 @@ const titleButton = ({ title, iconPath }: Props) => {
   );
 };
 
-export default titleButton;
+export default TitleButton;

@@ -9,8 +9,10 @@ function App() {
   const [isAnswered, setIsAnswered] = useState(false); */
 
   return (
-    <div className="bg-background text-text-primary font-display min-h-dvh p-12 leading-none font-medium">
-      <Main />
+    <div className="bg-background text-text-primary font-display min-h-dvh px-6 leading-none font-medium md:px-16 xl:px-[8.75rem]">
+      <div className="mx-auto max-w-[1157px]">
+        <Main />
+      </div>
     </div>
   );
 }
