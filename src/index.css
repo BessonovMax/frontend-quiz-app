@@ -1,4 +1,8 @@
 @import "tailwindcss";
+/* 
+* {
+  box-sizing: border-box;
+} */
 
 @font-face {
   font-family: Rubik;
@@ -35,7 +39,8 @@
   --color-background: var(--background);
   --color-variant-background: var(--variant-background);
   --color-variant-foreground: var(--variant-foreground);
-  --color-text: var(--text);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
   --color-circle: var(--circle);
   --color-variant-foreground-text: var(--variant-foreground-text);
 }
@@ -44,7 +49,8 @@
   --radius: 0.625rem;
   --background: #f4f6fa;
   --variant-background: #fff;
-  --text: #313e51;
+  --text-primary: #313e51;
+  --text-secondary: #626c7f;
   --variant-foreground: #f4f6fa;
   --circle: #edf1f9;
   --primary: #a729f5;
@@ -60,7 +66,8 @@
 .dark {
   --background: #313e51;
   --variant-background: #3b4d66;
-  --text: #fff;
+  --text-primary: #fff;
+  --text-secondary: #626c7f;
   --variant-foreground: #f4f6fa;
   --variant-foreground-text: #626c7f;
   --circle: #2d3949;
