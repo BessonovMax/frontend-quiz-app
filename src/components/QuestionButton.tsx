@@ -1,14 +1,14 @@
 interface Props {
-  isAnswered: boolean;
-  setIsCorrect: React.Dispatch<React.SetStateAction<boolean>>;
-  setIsAnswered: React.Dispatch<React.SetStateAction<boolean>>;
+  isAnswered?: boolean | null;
+  /* setIsCorrect: React.Dispatch<React.SetStateAction<boolean>>; */
+  setIsAnswered: React.Dispatch<React.SetStateAction<boolean | null>>;
 }
 
-const QuestionButton = ({ isAnswered, setIsCorrect, setIsAnswered }: Props) => {
+const QuestionButton = ({ isAnswered, setIsAnswered }: Props) => {
   return (
     <button
       onClick={() => {
-        setIsCorrect((prev): boolean => !prev);
+        /* setIsCorrect((prev) => !prev); */
 
         setIsAnswered((prev): boolean => !prev);
       }}
