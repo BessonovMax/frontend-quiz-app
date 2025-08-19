@@ -16,7 +16,7 @@ export default function Options({ question }: QuizPageProps) {
     setSelectedOption(index);
   };
   return (
-    <div className="flex min-w-[20.4375rem] flex-col gap-4 md:gap-6 xl:gap-4">
+    <div className="flex min-w-[20.4375rem] grow-1 flex-col gap-4 md:gap-6 xl:gap-4">
       {options.map((option, index) => (
         <VariantButton
           key={index}
