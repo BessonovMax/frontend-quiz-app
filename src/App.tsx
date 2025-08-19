@@ -15,7 +15,7 @@ function App() {
         <Header title={quiz.title} iconPath={quiz.icon} />
         {/* <WelcomePage quizzes={quizzes} /> */}
         {/* <QuizPage quizzes={quizzes} /> */}
-        {<ResultPage title={quiz.title} iconPath={quiz.icon} />}
+        <ResultPage title={quiz.title} iconPath={quiz.icon} />
       </div>
     </div>
   );

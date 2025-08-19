@@ -18,7 +18,7 @@ export default function Header({ title, iconPath }: Props) {
           src="/images/icon-sun-dark.svg"
           alt=""
         />
-        themeSwitcher
+        Switcher
         <img
           className="size-4 md:size-6"
           src="/images/icon-moon-dark.svg"
