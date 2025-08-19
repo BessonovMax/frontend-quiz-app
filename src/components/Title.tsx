@@ -18,7 +18,7 @@ export default function Title({ title, iconPath }: Props) {
         className={`${bg} flex size-[2.5rem] items-center justify-center rounded-[6px] text-[1.125rem] uppercase md:size-[3.5rem] md:rounded-[12px] md:text-[1.75rem] xl:rounded-[8px]`}
       >
         <img
-          className="w-[16px] md:w-[22.5px]"
+          className="w-[28px] md:w-[40px]"
           src={iconPath}
           alt={`${title} icon`}
         />

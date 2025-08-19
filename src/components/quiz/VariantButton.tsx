@@ -29,7 +29,7 @@ const VariantButton = ({
     <button
       className={clsx(
         // --- Base classes that are ALWAYS applied ---
-        "bg-variant-background group flex min-w-[20.4375rem] items-center justify-between gap-4 rounded-[12px] border-3 p-[13px] hover:cursor-pointer md:min-w-[40rem] md:gap-8 md:rounded-[24px] xl:min-w-[35.25rem] xl:p-[21px]",
+        "bg-variant-background group flex items-center justify-between gap-4 rounded-[12px] border-3 p-[13px] hover:cursor-pointer md:gap-8 md:rounded-[24px] xl:p-[21px]",
         isAnswered
           ? {
               "border-incorrect": isSelectedAndWrong,
@@ -39,7 +39,8 @@ const VariantButton = ({
             }
           : {
               "border-primary": isActive,
-              "border-variant-background hover:border-primary": !isActive,
+              "border-variant-background hover:border-primary focus:border-primary focus:outline-0":
+                !isActive,
             },
       )}
       onClick={onClick}
@@ -62,7 +63,7 @@ const VariantButton = ({
               }
             : {
                 "bg-primary text-white": isActive,
-                "bg-variant-foreground text-text-letter group-hover:bg-primary group-hover:text-white":
+                "bg-variant-foreground text-text-letter group-focus:bg-primary group-hover:bg-primary group-hover:text-white group-focus:text-white":
                   !isActive,
               },
         )}
