@@ -8,9 +8,10 @@ interface Props {
 export default function Header({ title, iconPath }: Props) {
   return (
     <header className="pb- flex justify-between pt-4 pb-[48px] md:py-[3.125rem] xl:py-[83px]">
-      <div className="flex min-w-[167px] items-center justify-start gap-4 md:min-w-[253px] md:gap-6">
+      <div>
         <Title title={title} iconPath={iconPath} />
       </div>
+
       <div className="flex items-center gap-2 md:gap-4">
         <img
           className="size-4 md:size-6"

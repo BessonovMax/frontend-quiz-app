@@ -1,16 +1,16 @@
-import type { Question, Quiz } from "../types";
+import type { QuestionType, QuizType } from "../types";
 import Options from "../components/quiz/Options";
 import QuestionArea from "../components/quiz/QuestionArea";
 
-type QuizPageProps = { quiz: Quiz };
+type QuizPageProps = { quizzes: QuizType[] };
 
-export default function QuizPage({ quiz }: QuizPageProps) {
-  const question: Question = quiz.questions[4];
+export default function QuizPage({ quizzes }: QuizPageProps) {
+  const question: QuestionType = quizzes[0].questions[4];
 
   return (
-    <div className="flex flex-col gap-[2.5rem] xl:flex-row xl:gap-32">
-      <QuestionArea quiz={quiz} />
+    <section className="flex flex-col gap-[2.5rem] xl:flex-row xl:gap-32">
+      <QuestionArea quizzes={quizzes} />
       <Options question={question} />
-    </div>
+    </section>
   );
 }

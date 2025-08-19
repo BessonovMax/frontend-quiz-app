@@ -1,15 +1,17 @@
 import TitleButton from "../components/TitleButton";
-import data from "../data/data.json";
+import type { QuizType } from "../types";
 
-const titles = data.quizzes.map((quiz) => ({
-  title: quiz.title,
-  icon: quiz.icon,
-}));
+type QuizPageProps = { quizzes: QuizType[] };
 
-export default function WelcomePage() {
+export default function WelcomePage({ quizzes }: QuizPageProps) {
+  const titles = quizzes.map((quiz) => ({
+    title: quiz.title,
+    icon: quiz.icon,
+  }));
+
   return (
     <>
-      <main className="flex flex-col gap-[2.5rem] md:gap-[4rem] xl:flex-row xl:gap-[8rem]">
+      <main className="flex flex-col gap-[2.5rem] md:gap-[4rem] xl:flex-row xl:gap-32">
         <div className="flex flex-col gap-4 xl:gap-12">
           <h1 className="flex flex-col gap-[8px] text-[2.5rem] md:text-[4rem]">
             <span className="font-light">Welcome to the </span>Frontend Quiz!

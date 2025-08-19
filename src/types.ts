@@ -1,11 +1,16 @@
-export type Question = {
+export type QuestionType = {
   question: string;
   options: string[];
   answer: string;
 };
 
-export type Quiz = {
+export type QuizType = {
   title: string;
   icon: string;
-  questions: Question[];
+  questions: QuestionType[];
+};
+
+export type TitleType = {
+  title: string;
+  iconPath: string;
 };
