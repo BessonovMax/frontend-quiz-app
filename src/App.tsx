@@ -1,7 +1,7 @@
 import { useState } from "react";
 import data from "./data/data.json";
 import VariantButton from "./components/VariantButton";
-import QuestionButton from "./components/QuestionButton";
+import AnswerButton from "./components/AnswerButton";
 
 function App() {
   /* const [isCorrect, setIsCorrect] = useState(false); */
@@ -31,7 +31,7 @@ function App() {
             letter={String.fromCharCode(97 + index)} // 'a' + index
           />
         ))}
-        <QuestionButton isAnswered={isAnswered} setIsAnswered={setIsAnswered} />
+        <AnswerButton isAnswered={isAnswered} setIsAnswered={setIsAnswered} />
       </div>
     </div>
   );

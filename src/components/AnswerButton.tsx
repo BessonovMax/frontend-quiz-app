@@ -4,7 +4,7 @@ interface Props {
   setIsAnswered: React.Dispatch<React.SetStateAction<boolean | null>>;
 }
 
-const QuestionButton = ({ isAnswered, setIsAnswered }: Props) => {
+const AnswerButton = ({ isAnswered, setIsAnswered }: Props) => {
   return (
     <button
       onClick={() => {
@@ -21,4 +21,4 @@ const QuestionButton = ({ isAnswered, setIsAnswered }: Props) => {
   );
 };
 
-export default QuestionButton;
+export default AnswerButton;
