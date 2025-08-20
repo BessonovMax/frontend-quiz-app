@@ -2,20 +2,34 @@ import QuizButton from "../QuizButton";
 
 interface Props {
   isAnswered?: boolean | null;
-  /* setIsCorrect: React.Dispatch<React.SetStateAction<boolean>>; */
+  setQuestionIndex: React.Dispatch<React.SetStateAction<number>>;
   setIsAnswered: React.Dispatch<React.SetStateAction<boolean | null>>;
+  setSelectedOption: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
-const AnswerButton = ({ isAnswered, setIsAnswered }: Props) => {
-  const onClickHandler = () => {
-    /* setIsCorrect((prev) => !prev); */
-
+const AnswerButton = ({
+  isAnswered,
+  setIsAnswered,
+  setQuestionIndex,
+  setSelectedOption,
+}: Props) => {
+  const onAnswerHandler = () => {
     setIsAnswered((prev): boolean => !prev);
   };
 
-  return (
-    <QuizButton onClickHandler={onClickHandler}>
-      {isAnswered ? <span>Next Question</span> : <span>Submit Answer</span>}
+  const onNextQuestion = () => {
+    setIsAnswered((prev): boolean => !prev);
+    setSelectedOption(null);
+    setQuestionIndex((prev) => prev + 1);
+  };
+
+  return isAnswered ? (
+    <QuizButton onClickHandler={onNextQuestion}>
+      <span>Next Question</span>
+    </QuizButton>
+  ) : (
+    <QuizButton onClickHandler={onAnswerHandler}>
+      <span>Submit Answer</span>
     </QuizButton>
   );
 };

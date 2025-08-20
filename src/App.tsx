@@ -1,21 +1,14 @@
+import { Outlet } from "react-router";
 import Header from "./components/Header";
-import data from "./data/data.json";
-/* import QuizPage from "./pages/QuizPage"; */
-import ResultPage from "./pages/ResultPage";
-/* import WelcomePage from "./pages/WelcomePage"; */
 
-import { type QuizType } from "./types";
 function App() {
-  /* const quizzes = data.quizzes; */
-  const quiz: QuizType = data.quizzes[3];
-
   return (
     <div className="bg-background text-text-primary font-display min-h-dvh px-6 leading-none font-medium md:px-16 xl:px-[8.75rem]">
       <div className="mx-auto max-w-[1440px] gap-[2.5rem] md:gap-[4rem] xl:gap-[8rem] 2xl:max-w-[1650px]">
-        <Header title={quiz.title} iconPath={quiz.icon} />
-        {/* <WelcomePage quizzes={quizzes} /> */}
-        {/* <QuizPage quizzes={quizzes} /> */}
-        <ResultPage title={quiz.title} iconPath={quiz.icon} />
+        <Header />
+        <main>
+          <Outlet />
+        </main>
       </div>
     </div>
   );

@@ -1,16 +1,34 @@
-import type { QuestionType, QuizType } from "../types";
+import type { QuizType } from "../types";
 import Options from "../components/quiz/Options";
 import QuestionArea from "../components/quiz/QuestionArea";
+import data from "../data/data.json";
+import { useNavigate, useParams } from "react-router";
+import { useState } from "react";
 
-type QuizPageProps = { quizzes: QuizType[] };
+export default function QuizPage() {
+  const navigate = useNavigate();
 
-export default function QuizPage({ quizzes }: QuizPageProps) {
-  const question: QuestionType = quizzes[0].questions[4];
+  const { topic } = useParams<{ topic: string }>();
+  const quiz: QuizType | undefined = data.quizzes.find(
+    (quiz: QuizType) => quiz?.title === topic,
+  );
+  const [questionIndex, setQuestionIndex] = useState<number>(0);
+
+  if (!quiz) {
+    return <div>Quiz not found.</div>;
+  }
+
+  if (questionIndex > quiz.questions.length - 1) {
+    navigate(`/result/${topic}`);
+  }
 
   return (
     <section className="flex flex-col gap-[2.5rem] xl:flex-row xl:gap-32">
-      <QuestionArea quizzes={quizzes} />
-      <Options question={question} />
+      <QuestionArea questions={quiz.questions} questionIndex={questionIndex} />
+      <Options
+        setQuestionIndex={setQuestionIndex}
+        question={quiz.questions[questionIndex]}
+      />
     </section>
   );
 }
