@@ -9,7 +9,7 @@ import ResultPage from "./pages/ResultPage.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/frontend-quiz-app/">
       <Routes>
         <Route element={<App />}>
           <Route index element={<WelcomePage />} />
