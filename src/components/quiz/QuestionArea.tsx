@@ -12,7 +12,7 @@ export default function QuestionArea({
   const totalQuestions = questions.length;
 
   // Calculate the progress percentage
-  const progressPercentage = ((questionIndex + 1) / totalQuestions) * 100;
+  const progressPercentage = (questionIndex / totalQuestions) * 100;
 
   return (
     <div className="flex flex-col gap-6 md:gap-10 xl:max-w-[472px] xl:gap-[11.5rem]">

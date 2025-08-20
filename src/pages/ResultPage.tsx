@@ -1,15 +1,9 @@
-import { useParams } from "react-router";
 import NewGameButton from "../components/NewGameButton";
 import Title from "../components/Title";
-import data from "../data/data.json";
-import type { QuizType } from "../types";
+import useQuiz from "../hooks/useQuiz";
 
 export default function ResultPage() {
-  const { topic } = useParams<{ topic: string }>();
-
-  const quiz: QuizType | undefined = data.quizzes.find(
-    (quiz) => quiz.title === topic,
-  );
+  const { quiz } = useQuiz();
 
   if (!quiz) {
     return <div>Quiz not found.</div>;

@@ -1,7 +1,7 @@
-import TitleButton from "../components/TitleButton";
 import type { QuizType } from "../types";
 import data from "../data/data.json";
 import { Link } from "react-router";
+import Title from "../components/Title";
 
 export default function WelcomePage() {
   const titles = data.quizzes.map((quiz: QuizType) => ({
@@ -23,8 +23,11 @@ export default function WelcomePage() {
         <ul className="flex min-w-[20.4375rem] grow-1 flex-col gap-4 md:gap-6 xl:gap-4">
           {titles.map((title) => (
             <li key={title.title}>
-              <Link to={`quiz/${title.title}`}>
-                <TitleButton title={title.title} iconPath={title.icon} />
+              <Link
+                className="bg-variant-background border-variant-background flex w-full cursor-pointer items-center justify-start gap-4 rounded-[12px] border-3 p-[13px] md:gap-8 md:rounded-[24px] xl:p-[21px]"
+                to={`quiz/${title.title}`}
+              >
+                <Title title={title.title} iconPath={title.icon} />
               </Link>
             </li>
           ))}

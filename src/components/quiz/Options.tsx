@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type { QuestionType } from "../../types";
 import VariantButton from "./VariantButton";
 import AnswerButton from "./AnswerButton";
@@ -6,18 +5,25 @@ import AnswerButton from "./AnswerButton";
 type QuizPageProps = {
   question: QuestionType;
   setQuestionIndex: React.Dispatch<React.SetStateAction<number>>;
+  selectedOption: number | null;
+  setSelectedOption: React.Dispatch<React.SetStateAction<number | null>>;
+  isAnswered: boolean | null;
+  setIsAnswered: React.Dispatch<React.SetStateAction<boolean | null>>;
+  handleNextQuestion: () => void;
+  handleSelectedOption: (index: number) => void;
 };
 
-export default function Options({ question, setQuestionIndex }: QuizPageProps) {
-  const [isAnswered, setIsAnswered] = useState<boolean | null>(null);
-  const [selectedOption, setSelectedOption] = useState<number | null>(null);
-
+export default function Options({
+  question,
+  selectedOption,
+  isAnswered,
+  setIsAnswered,
+  handleNextQuestion,
+  handleSelectedOption,
+}: QuizPageProps) {
   const options = question.options;
   const correctAnswerIndex = options.indexOf(question.answer || "");
 
-  const handleSelectedOption = (index: number) => {
-    setSelectedOption(index);
-  };
   return (
     <div className="flex min-w-[20.4375rem] grow-1 flex-col gap-4 md:gap-6 xl:gap-4">
       {options?.map((option: string, index: number) => (
@@ -32,9 +38,8 @@ export default function Options({ question, setQuestionIndex }: QuizPageProps) {
         />
       ))}
       <AnswerButton
+        handleNextQuestion={handleNextQuestion}
         selectedOption={selectedOption}
-        setQuestionIndex={setQuestionIndex}
-        setSelectedOption={setSelectedOption}
         isAnswered={isAnswered}
         setIsAnswered={setIsAnswered}
       />

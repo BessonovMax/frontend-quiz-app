@@ -4,19 +4,18 @@ import QuizButton from "../QuizButton";
 interface Props {
   selectedOption: number | null;
   isAnswered?: boolean | null;
-  setQuestionIndex: React.Dispatch<React.SetStateAction<number>>;
   setIsAnswered: React.Dispatch<React.SetStateAction<boolean | null>>;
-  setSelectedOption: React.Dispatch<React.SetStateAction<number | null>>;
+  handleNextQuestion: () => void;
 }
 
 const AnswerButton = ({
   selectedOption,
   isAnswered,
   setIsAnswered,
-  setQuestionIndex,
-  setSelectedOption,
+  handleNextQuestion,
 }: Props) => {
   const [notSelected, setNotSelected] = useState<boolean>(false);
+
   const onAnswerHandler = () => {
     if (selectedOption === null) {
       setNotSelected(true);
@@ -26,14 +25,8 @@ const AnswerButton = ({
     setNotSelected(false);
   };
 
-  const onNextQuestion = () => {
-    setIsAnswered((prev): boolean => !prev);
-    setSelectedOption(null);
-    setQuestionIndex((prev) => prev + 1);
-  };
-
   return isAnswered ? (
-    <QuizButton onClickHandler={onNextQuestion}>
+    <QuizButton onClickHandler={handleNextQuestion}>
       <span>Next Question</span>
     </QuizButton>
   ) : (

@@ -1,11 +1,11 @@
-import { useParams } from "react-router";
 import Title from "./Title";
 import data from "../data/data.json";
 import type { TitleType } from "../types";
 import ThemeSwitcher from "./ThemeSwitcher";
+import useQuiz from "../hooks/useQuiz";
 
 export default function Header() {
-  const { topic } = useParams();
+  const { topic } = useQuiz();
 
   const title: TitleType = {
     title: data.quizzes.find((quiz) => quiz.title === topic)?.title || "",
