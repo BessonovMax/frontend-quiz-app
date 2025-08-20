@@ -29,7 +29,7 @@ const VariantButton = ({
     <button
       className={clsx(
         // --- Base classes that are ALWAYS applied ---
-        "bg-variant-background group flex items-center justify-between gap-4 rounded-[12px] border-3 p-[13px] hover:cursor-pointer md:gap-8 md:rounded-[24px] xl:p-[21px]",
+        "bg-variant-background group flex cursor-pointer items-center justify-between gap-4 rounded-[12px] border-3 p-[13px] md:gap-8 md:rounded-[24px] xl:p-[21px]",
         isAnswered
           ? {
               "border-incorrect": isSelectedAndWrong,

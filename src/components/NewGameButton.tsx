@@ -1,7 +1,11 @@
+import { useNavigate } from "react-router";
 import QuizButton from "./QuizButton";
 
 const NewGameButton = () => {
-  const onClickHandler = () => {};
+  const navigate = useNavigate();
+  const onClickHandler = () => {
+    navigate("/");
+  };
 
   return (
     <QuizButton onClickHandler={onClickHandler}>

@@ -32,6 +32,7 @@ export default function Options({ question, setQuestionIndex }: QuizPageProps) {
         />
       ))}
       <AnswerButton
+        selectedOption={selectedOption}
         setQuestionIndex={setQuestionIndex}
         setSelectedOption={setSelectedOption}
         isAnswered={isAnswered}

@@ -16,7 +16,7 @@ export default function WelcomePage() {
           <h1 className="flex flex-col gap-[8px] text-[2.5rem] md:text-[4rem]">
             <span className="font-light">Welcome to the </span>Frontend Quiz!
           </h1>
-          <p className="font-display-italic text-text-secondary text-[0.825rem] leading-[150%] font-light md:text-[1.25rem]">
+          <p className="font-display-italic text-text-secondary text-[0.875rem] leading-[150%] font-light md:text-[1.25rem]">
             Pick a subject to get started.
           </p>
         </div>
