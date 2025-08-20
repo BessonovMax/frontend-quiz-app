@@ -1,4 +1,5 @@
 import { type TitleType } from "../types";
+import { getAssetUrl } from "../utils/getAssetUrl";
 
 const iconMap: Record<string, { bg: string }> = {
   CSS: { bg: "bg-css-background" },
@@ -16,7 +17,7 @@ export default function Title({ title, iconPath }: TitleType) {
       >
         <img
           className="w-[28px] md:w-[40px]"
-          src={iconPath}
+          src={getAssetUrl(iconPath)}
           alt={`${title} icon`}
         />
       </div>

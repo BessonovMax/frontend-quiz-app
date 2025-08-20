@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { getAssetUrl } from "../utils/getAssetUrl";
 
 const STORAGE_KEY = "theme";
 
@@ -40,8 +41,8 @@ export default function ThemeSwitcher() {
         className="size-4 md:size-6"
         src={
           theme === "light"
-            ? "/images/icon-sun-dark.svg"
-            : "/images/icon-sun-light.svg"
+            ? getAssetUrl("icon-sun-dark.svg")
+            : getAssetUrl("icon-sun-light.svg")
         }
         alt=""
       />
@@ -57,8 +58,8 @@ export default function ThemeSwitcher() {
         className="size-4 md:size-6"
         src={
           theme === "light"
-            ? "/images/icon-moon-dark.svg"
-            : "/images/icon-moon-light.svg"
+            ? getAssetUrl("icon-moon-dark.svg")
+            : getAssetUrl("icon-moon-light.svg")
         }
         alt=""
       />

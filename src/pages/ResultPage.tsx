@@ -1,6 +1,6 @@
 import NewGameButton from "../components/NewGameButton";
 import Title from "../components/Title";
-import { useStore } from "../data/store";
+import { useStore } from "../store/store";
 import useQuiz from "../hooks/useQuiz";
 
 export default function ResultPage() {

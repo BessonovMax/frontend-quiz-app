@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
 import QuizButton from "./QuizButton";
-import { useStore } from "../data/store";
+import { useStore } from "../store/store";
 
 const NewGameButton = () => {
   const navigate = useNavigate();

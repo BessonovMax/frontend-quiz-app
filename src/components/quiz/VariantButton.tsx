@@ -1,6 +1,6 @@
 import clsx from "clsx";
-import Correct from "/images/icon-correct.svg";
-import inCorrect from "/images/icon-error.svg";
+import CorrectIcon from "../../assets/images/icon-correct.svg";
+import IncorrectIcon from "../../assets/images/icon-error.svg";
 
 interface Props {
   isAnswered?: boolean | null;
@@ -78,7 +78,7 @@ const VariantButton = ({
       >
         <img
           className="h-[24px] w-[24px] md:h-[30px] md:w-[30px]"
-          src={isCorrect ? Correct : inCorrect}
+          src={isCorrect ? CorrectIcon : IncorrectIcon}
           alt={isCorrect ? "correct answer" : "incorrect answer"}
         />
       </div>

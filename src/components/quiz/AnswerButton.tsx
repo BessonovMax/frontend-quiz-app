@@ -1,4 +1,5 @@
 import QuizButton from "../QuizButton";
+import IncorrectIcon from "../../assets/images/icon-error.svg";
 
 interface Props {
   isAnswered?: boolean | null;
@@ -24,7 +25,7 @@ const AnswerButton = ({
       </QuizButton>
       {showSelectionError && (
         <div className="text-incorrect flex items-center gap-2 text-[1.125rem] font-medium md:text-[1.5rem] md:font-normal">
-          <img className="size-8" src="/images/icon-error.svg" alt="error" />
+          <img className="size-8" src={IncorrectIcon} alt="error" />
           <span>Please select an answer</span>
         </div>
       )}

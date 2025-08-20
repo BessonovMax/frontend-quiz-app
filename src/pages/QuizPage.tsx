@@ -3,7 +3,7 @@ import QuestionArea from "../components/quiz/QuestionArea";
 import { useNavigate } from "react-router";
 import { useState } from "react";
 import useQuiz from "../hooks/useQuiz";
-import { useStore } from "../data/store";
+import { useStore } from "../store/store";
 
 export default function QuizPage() {
   const navigate = useNavigate();

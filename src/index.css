@@ -3,13 +3,14 @@
 @font-face {
   font-family: Rubik;
   font-style: normal;
-  src: url("/fonts/Rubik-VariableFont_wght.ttf") format("truetype");
+  src: url("./assets/fonts/Rubik-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Rubik Italic";
   font-style: italic;
-  src: url("/fonts/Rubik-Italic-VariableFont_wght.ttf") format("truetype");
+  src: url("./assets/fonts/Rubik-Italic-VariableFont_wght.ttf")
+    format("truetype");
 }
 
 @custom-variant dark (&:is(.dark *));
