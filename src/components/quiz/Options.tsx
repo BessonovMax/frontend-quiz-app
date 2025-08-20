@@ -4,29 +4,28 @@ import AnswerButton from "./AnswerButton";
 
 type QuizPageProps = {
   question: QuestionType;
-  setQuestionIndex: React.Dispatch<React.SetStateAction<number>>;
   selectedOption: number | null;
-  setSelectedOption: React.Dispatch<React.SetStateAction<number | null>>;
   isAnswered: boolean | null;
-  setIsAnswered: React.Dispatch<React.SetStateAction<boolean | null>>;
   handleNextQuestion: () => void;
   handleSelectedOption: (index: number) => void;
+  onAnswerHandler: () => void;
+  showSelectionError: boolean;
 };
 
 export default function Options({
   question,
   selectedOption,
   isAnswered,
-  setIsAnswered,
   handleNextQuestion,
   handleSelectedOption,
+  onAnswerHandler,
+  showSelectionError,
 }: QuizPageProps) {
-  const options = question.options;
-  const correctAnswerIndex = options.indexOf(question.answer || "");
+  const correctAnswerIndex = question.options.indexOf(question.answer);
 
   return (
     <div className="flex min-w-[20.4375rem] grow-1 flex-col gap-4 md:gap-6 xl:gap-4">
-      {options?.map((option: string, index: number) => (
+      {question.options?.map((option: string, index: number) => (
         <VariantButton
           key={index}
           isAnswered={isAnswered}
@@ -38,10 +37,10 @@ export default function Options({
         />
       ))}
       <AnswerButton
-        handleNextQuestion={handleNextQuestion}
-        selectedOption={selectedOption}
         isAnswered={isAnswered}
-        setIsAnswered={setIsAnswered}
+        handleNextQuestion={handleNextQuestion}
+        onAnswerHandler={onAnswerHandler}
+        showSelectionError={showSelectionError}
       />
     </div>
   );
