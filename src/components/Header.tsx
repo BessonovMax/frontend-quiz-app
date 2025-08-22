@@ -12,7 +12,7 @@ export default function Header() {
   };
 
   return (
-    <header className="pb- flex justify-between pt-4 pb-[48px] md:py-[3.125rem] xl:py-[83px]">
+    <header className="pb- flex justify-between pt-4 pb-[48px] md:pt-[2.5rem] md:pb-[3.125rem] xl:pt-[83px] xl:pb-[94px]">
       <div>
         {quiz ? <Title title={title.title} iconPath={title.iconPath} /> : ""}
       </div>
