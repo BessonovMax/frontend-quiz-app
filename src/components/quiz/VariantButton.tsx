@@ -49,7 +49,7 @@ const VariantButton = ({
       <div
         className={clsx(
           // --- Base classes that are ALWAYS applied ---
-          "flex size-[2.5rem] items-center justify-center rounded-[6px] text-[1.125rem] uppercase md:size-[3.5rem] md:rounded-[12px] md:text-[1.75rem] xl:rounded-[8px]",
+          "flex size-[2.5rem] shrink-0 items-center justify-center rounded-[6px] text-[1.125rem] uppercase md:size-[3.5rem] md:rounded-[12px] md:text-[1.75rem] xl:rounded-[8px]",
 
           isAnswered
             ? {
