@@ -44,6 +44,7 @@ const VariantButton = ({
             },
       )}
       onClick={onClick}
+      type="button"
       disabled={isAnswered ? true : false}
     >
       <div

@@ -1,21 +1,20 @@
 import Title from "./Title";
-import data from "../data/data.json";
 import type { TitleType } from "../types";
 import ThemeSwitcher from "./ThemeSwitcher";
 import useQuiz from "../hooks/useQuiz";
 
 export default function Header() {
-  const { topic } = useQuiz();
+  const { quiz } = useQuiz();
 
   const title: TitleType = {
-    title: data.quizzes.find((quiz) => quiz.title === topic)?.title || "",
-    iconPath: data.quizzes.find((quiz) => quiz.title === topic)?.icon || "",
+    title: quiz?.title ?? "",
+    iconPath: quiz?.icon ?? "",
   };
 
   return (
     <header className="pb- flex justify-between pt-4 pb-[48px] md:py-[3.125rem] xl:py-[83px]">
       <div>
-        {topic ? <Title title={title.title} iconPath={title.iconPath} /> : ""}
+        {quiz ? <Title title={title.title} iconPath={title.iconPath} /> : ""}
       </div>
       <ThemeSwitcher />
     </header>

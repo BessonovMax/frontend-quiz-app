@@ -40,6 +40,9 @@
   --color-text-letter: var(--text-letter);
   --color-circle: var(--circle);
   --color-variant-foreground-text: var(--variant-foreground-text);
+  --image-desktop: var(--bg-image-desktop);
+  --image-tablet: var(--bg-image-tablet);
+  --image-mobile: var(--bg-image-mobile);
 }
 
 :root {
@@ -59,6 +62,9 @@
   --js-background: #ebf0ff;
   --accessibility-background: #f6e7ff;
   --variant-foreground-text: #626c7f;
+  --bg-image-desktop: url("./assets/images/pattern-background-desktop-light.svg");
+  --bg-image-tablet: url("./assets/images/pattern-background-tablet-light.svg");
+  --bg-image-mobile: url("./assets/images/pattern-background-mobile-light.svg");
 }
 
 .dark {
@@ -77,4 +83,7 @@
   --css-background: #e0fdef;
   --js-background: #ebf0ff;
   --accessibility-background: #f6e7ff;
+  --bg-image-desktop: url("./assets/images/pattern-background-desktop-dark.svg");
+  --bg-image-tablet: url("./assets/images/pattern-background-tablet-dark.svg");
+  --bg-image-mobile: url("./assets/images/pattern-background-mobile-dark.svg");
 }

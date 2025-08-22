@@ -26,7 +26,7 @@ export default function QuizPage() {
     if (isLastQuestion) {
       navigate(`/result/${topic}`);
     } else {
-      setIsAnswered((prev): boolean => !prev);
+      setIsAnswered(false);
       setSelectedOption(null);
       setQuestionIndex((prev) => prev + 1);
     }
@@ -50,7 +50,7 @@ export default function QuizPage() {
       increaseScore();
     }
 
-    setIsAnswered((prev): boolean => !prev);
+    setIsAnswered(true);
   };
 
   const handleSelectedOption = (index: number) => {
