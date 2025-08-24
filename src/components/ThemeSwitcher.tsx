@@ -4,27 +4,26 @@ import { getAssetUrl } from "../utils/getAssetUrl";
 const STORAGE_KEY = "theme";
 
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-
-  useEffect(() => {
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
     const savedTheme = localStorage.getItem(STORAGE_KEY) as
       | "light"
       | "dark"
       | null;
 
     if (savedTheme === "dark" || savedTheme === "light") {
-      setTheme(savedTheme);
       document.documentElement.classList.toggle("dark", savedTheme === "dark");
+      return savedTheme;
     } else {
       // First visit → follow system
       const systemPrefersDark = window.matchMedia(
         "(prefers-color-scheme: dark)",
       ).matches;
       const initialTheme = systemPrefersDark ? "dark" : "light";
-      setTheme(initialTheme);
+
       document.documentElement.classList.toggle("dark", systemPrefersDark);
+      return initialTheme;
     }
-  }, []);
+  });
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
